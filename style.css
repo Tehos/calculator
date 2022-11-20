@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+}
+
+body {
+  background-color: rgb(187, 170, 160);
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 25vw;
+  height: 100vh;
+}
+
+.calculator-case {
+  background-color: rgb(255, 248, 214);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+  padding: 10% 0 15% 0;
+  border-radius: 7px;
+  box-shadow: -5px 5px rgb(109, 106, 89);
+  transform: rotate(-2deg);
+}
+
+.display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgb(173, 205, 171);
+  color: rgb(50, 59, 49);
+  font-family: "Segment7Standard";
+  font-weight: normal;
+  font-style: italic;
+  font-size: 2.2em;
+  border-radius: 10px;
+  width: 75%;
+  height: 10%;
+  box-shadow: inset 1px 4px 6px 0.2px rgb(102, 119, 100);
+  padding-right: 10px;
+  padding-top: 5px;
+}
+
+.all-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 55%;
+}
+
+button {
+  font-size: 1em;
+  padding: 0.5em 1em;
+  background: linear-gradient(to left, rgb(94, 88, 78), rgb(41, 39, 28) 40%);
+  color: rgb(237, 221, 166);
+  border-radius: 5px;
+  border-width: 1px;
+  /* border-width: 3px;
+  border-color: rgb(95, 95, 95), rgb(0, 0, 0), rgb(0, 0, 0), rgb(137, 137, 137); */
+  font-weight: 700;
+  box-shadow: -2px 2px rgb(109, 106, 89);
+}
+button:active {
+  box-shadow: 0 0 rgb(109, 106, 89);
+  translate: -2px 3px;
+}
+
+.left-hand-buttons {
+  flex-grow: 0.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-hand-buttons {
+  flex-grow: 0.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.digit-buttons {
+  flex-grow: 3;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(4, auto);
+  align-content: space-between;
+  justify-content: space-evenly;
+}
