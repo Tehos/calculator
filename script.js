@@ -33,8 +33,14 @@ displayValue.textContent = "";
 let currentNum = "";
 let currentNumFull = false;
 let numbers = [];
+let answer = 0;
+let operatorPressed = false;
 
 function regDigit(e) {
+  if (operatorPressed) {
+    currentNum = "";
+    operatorPressed = false;
+  }
   if (currentNum.length > 10) {
     currentNumFull = true;
   }
@@ -52,11 +58,39 @@ const operatorBtns = document.querySelectorAll(".operator-btn");
 let operatorSymbol = "";
 
 const setOperator = function (e) {
-  numbers.push(Number(currentNum));
-  operatorSymbol = e.target.textContent;
+  numbers.push(Number(currentNum)); // register first number
+  operatorSymbol = e.target.textContent; // register operator
+  operatorPressed = true;
   console.log(numbers, operatorSymbol);
 };
 
 operatorBtns.forEach((operatorBtn) =>
   operatorBtn.addEventListener("click", setOperator)
 );
+
+const equalsBtn = document.querySelector(".equals-button");
+
+const operate = function () {
+  numbers.push(Number(currentNum));
+  switch (operatorSymbol) {
+    case "+":
+      answer = add(numbers);
+      break;
+    case "-":
+      answer = subtract(numbers);
+      break;
+    case "*":
+      answer = multiply(numbers);
+      break;
+    case "/":
+      answer = divide(numbers);
+      break;
+  }
+  currentNum = answer;
+  displayValue.textContent = currentNum;
+  answer = 0;
+  numbers = [];
+  console.log(answer);
+};
+
+equalsBtn.addEventListener("click", operate);
