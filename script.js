@@ -86,7 +86,9 @@ operatorBtns.forEach((operatorBtn) =>
 const equalsBtn = document.querySelector(".equals-button");
 
 const operate = function () {
+  if (numbers.length < 1) return;
   numbers.push(Number(currentNum));
+  if (numbers.length < 2) return;
   switch (operatorSymbol) {
     case "+":
       answer = roundNumber(add(numbers));
@@ -105,11 +107,10 @@ const operate = function () {
       answer = roundNumber(divide(numbers));
       break;
   }
-  currentNum = answer;
+  currentNum = answer.toString();
   displayValue.textContent = currentNum;
   answer = 0;
   numbers = [];
-  console.log(answer);
 };
 
 equalsBtn.addEventListener("click", operate);
