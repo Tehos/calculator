@@ -19,7 +19,7 @@ const divide = function (arr) {
 // CREATE BUTTONS FOR DIGITS
 const digitButtons = document.querySelector(".digit-buttons");
 
-for (i = 0; i < 10; i++) {
+for (i = 9; i >= 0; i--) {
   const digitButton = document.createElement("button");
   digitButton.classList.add("digit-btn");
   digitButton.textContent = [i];

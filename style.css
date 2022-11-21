@@ -96,3 +96,13 @@ button:active {
   align-content: space-between;
   justify-content: space-evenly;
 }
+
+.equals-button {
+  grid-row: 4;
+  grid-column: 3;
+}
+
+.dot-button {
+  grid-row: 4;
+  grid-column: 2;
+}
