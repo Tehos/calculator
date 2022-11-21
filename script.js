@@ -80,10 +80,10 @@ const operate = function () {
       answer = subtract(numbers);
       break;
     case "*":
-      answer = multiply(numbers);
+      answer = Math.round(multiply(numbers) * 100) / 100;
       break;
     case "/":
-      answer = divide(numbers);
+      answer = Math.round(divide(numbers) * 100) / 100;
       break;
   }
   currentNum = answer;
