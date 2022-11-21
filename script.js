@@ -52,7 +52,7 @@ function regDigit(e) {
 }
 digitBtns.forEach((digitBtn) => digitBtn.addEventListener("click", regDigit));
 
-//Calculate numbers
+//CALCULATE NUMBERS
 
 const operatorBtns = document.querySelectorAll(".operator-btn");
 let operatorSymbol = "";
@@ -94,3 +94,17 @@ const operate = function () {
 };
 
 equalsBtn.addEventListener("click", operate);
+
+// CLEAR BUTTON
+
+const deleteCurrentNum = function () {
+  currentNum = "";
+  displayValue.textContent = 0;
+  numbers = [];
+  answer = 0;
+  console.log(currentNum, displayValue.textContent, answer, numbers);
+};
+
+const clearBtn = document.querySelector(".clear-button");
+
+clearBtn.addEventListener("click", deleteCurrentNum);
