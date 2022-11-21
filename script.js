@@ -1,5 +1,21 @@
 // OPERATORS
 
+const add = function (arr) {
+  return arr[0] + arr[1];
+};
+
+const subtract = function (arr) {
+  return arr[0] - arr[1];
+};
+
+const multiply = function (arr) {
+  return arr[0] * arr[1];
+};
+
+const divide = function (arr) {
+  return arr[0] / arr[1];
+};
+
 // CREATE BUTTONS FOR DIGITS
 const digitButtons = document.querySelector(".digit-buttons");
 
@@ -28,3 +44,5 @@ function regDigit(e) {
   }
 }
 digitBtns.forEach((digitBtn) => digitBtn.addEventListener("click", regDigit));
+
+//Calculate numbers
