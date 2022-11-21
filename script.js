@@ -74,16 +74,20 @@ const operate = function () {
   numbers.push(Number(currentNum));
   switch (operatorSymbol) {
     case "+":
-      answer = add(numbers);
+      answer = Math.round(add(numbers) * 10000) / 10000;
       break;
     case "-":
-      answer = subtract(numbers);
+      answer = Math.round(subtract(numbers) * 10000) / 10000;
       break;
     case "*":
-      answer = Math.round(multiply(numbers) * 100) / 100;
+      answer = Math.round(multiply(numbers) * 10000) / 10000;
       break;
     case "/":
-      answer = Math.round(divide(numbers) * 100) / 100;
+      if (numbers[1] === 0) {
+        displayValue.textContent = "Nope";
+        return setTimeout(clearAll, 2000);
+      }
+      answer = Math.round(divide(numbers) * 10000) / 10000;
       break;
   }
   currentNum = answer;
@@ -97,7 +101,7 @@ equalsBtn.addEventListener("click", operate);
 
 // CLEAR BUTTON
 
-const deleteCurrentNum = function () {
+const clearAll = function () {
   currentNum = "";
   displayValue.textContent = 0;
   numbers = [];
@@ -107,4 +111,4 @@ const deleteCurrentNum = function () {
 
 const clearBtn = document.querySelector(".clear-button");
 
-clearBtn.addEventListener("click", deleteCurrentNum);
+clearBtn.addEventListener("click", clearAll);
