@@ -67,6 +67,10 @@ const setOperator = function (e) {
   console.log(numbers, operatorSymbol);
 };
 
+const roundNumber = function (num) {
+  return Math.round(num * 10000) / 10000;
+};
+
 operatorBtns.forEach((operatorBtn) =>
   operatorBtn.addEventListener("click", setOperator)
 );
@@ -77,20 +81,20 @@ const operate = function () {
   numbers.push(Number(currentNum));
   switch (operatorSymbol) {
     case "+":
-      answer = Math.round(add(numbers) * 10000) / 10000;
+      answer = roundNumber(add(numbers));
       break;
     case "-":
-      answer = Math.round(subtract(numbers) * 10000) / 10000;
+      answer = roundNumber(subtract(numbers));
       break;
     case "*":
-      answer = Math.round(multiply(numbers) * 10000) / 10000;
+      answer = roundNumber(multiply(numbers));
       break;
     case "/":
       if (numbers[1] === 0) {
         displayValue.textContent = "Nope";
         return setTimeout(clearAll, 2000);
       }
-      answer = Math.round(divide(numbers) * 10000) / 10000;
+      answer = roundNumber(divide(numbers));
       break;
   }
   currentNum = answer;
