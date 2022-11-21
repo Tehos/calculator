@@ -37,6 +37,9 @@ let answer = 0;
 let operatorPressed = false;
 
 function regDigit(e) {
+  if (currentNum === 0) {
+    clearAll();
+  }
   if (operatorPressed) {
     currentNum = "";
     operatorPressed = false;
