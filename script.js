@@ -32,6 +32,7 @@ const digitBtns = document.querySelectorAll(".digit-btn");
 displayValue.textContent = "";
 let currentNum = "";
 let currentNumFull = false;
+let numbers = [];
 
 function regDigit(e) {
   if (currentNum.length > 10) {
@@ -46,3 +47,16 @@ function regDigit(e) {
 digitBtns.forEach((digitBtn) => digitBtn.addEventListener("click", regDigit));
 
 //Calculate numbers
+
+const operatorBtns = document.querySelectorAll(".operator-btn");
+let operatorSymbol = "";
+
+const setOperator = function (e) {
+  numbers.push(Number(currentNum));
+  operatorSymbol = e.target.textContent;
+  console.log(numbers, operatorSymbol);
+};
+
+operatorBtns.forEach((operatorBtn) =>
+  operatorBtn.addEventListener("click", setOperator)
+);
