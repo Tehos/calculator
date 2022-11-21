@@ -37,8 +37,10 @@ let answer = 0;
 let operatorPressed = false;
 
 function regDigit(e) {
-  if (currentNum === 0) {
-    clearAll();
+  if (currentNum === "0" && e.target.textContent === "0") {
+    currentNum = "0";
+    displayValue.textContent = currentNum;
+    return;
   }
   if (operatorPressed) {
     currentNum = "";
@@ -47,11 +49,17 @@ function regDigit(e) {
   if (currentNum.length > 10) {
     currentNumFull = true;
   }
-  if (!currentNumFull) {
+  if (currentNum === "0" && e.target.textContent !== "0") {
+    currentNum = "";
     currentNum += e.target.textContent;
     displayValue.textContent = currentNum;
-    console.log(currentNum);
+    return;
   }
+  if (!currentNumFull && currentNum !== "0") {
+    currentNum += e.target.textContent;
+    displayValue.textContent = currentNum;
+  }
+  console.log(currentNum, displayValue.textContent, answer, numbers);
 }
 digitBtns.forEach((digitBtn) => digitBtn.addEventListener("click", regDigit));
 
@@ -110,7 +118,7 @@ equalsBtn.addEventListener("click", operate);
 
 const clearAll = function () {
   currentNum = "";
-  displayValue.textContent = 0;
+  displayValue.textContent = "0";
   numbers = [];
   answer = 0;
   console.log(currentNum, displayValue.textContent, answer, numbers);
