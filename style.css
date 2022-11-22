@@ -6,14 +6,13 @@
 
 body {
   background-color: rgb(187, 170, 160);
-  height: 90vh;
+  height: 80vh;
 }
 
 footer {
   text-align: center;
   font-size: 1em;
   color: rgb(67, 53, 32);
-  padding-bottom: 48px;
 }
 
 .container {
