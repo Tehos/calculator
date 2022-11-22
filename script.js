@@ -46,7 +46,7 @@ function regDigit(e) {
     currentNum = "";
     operatorPressed = false;
   }
-  if (document.getElementById("display-value").offsetWidth > 150) {
+  if (document.getElementById("display-value").offsetWidth > 190) {
     currentNumFull = true;
     displayValue.textContent = "Too long";
     return setTimeout(clearAll, 2000);
@@ -116,7 +116,7 @@ const operate = function () {
 
   currentNum = answer.toString();
   displayValue.textContent = currentNum;
-  if (document.getElementById("display-value").offsetWidth > 150) {
+  if (document.getElementById("display-value").offsetWidth > 190) {
     currentNumFull = true;
     displayValue.textContent = "Too long";
     return setTimeout(clearAll, 2000);
