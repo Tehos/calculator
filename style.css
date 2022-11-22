@@ -34,11 +34,16 @@ body {
 }
 
 #display {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: rgb(173, 205, 171);
-  color: rgb(50, 59, 49);
+  color: rgba(50, 59, 49, 0.085);
+  font-family: "Segment7Standard";
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.7rem;
   border-radius: 10px;
   width: 220px;
   height: 40px;
@@ -48,11 +53,13 @@ body {
 }
 
 #display-value {
+  position: absolute;
   color: rgb(50, 59, 49);
   font-family: "Segment7Standard";
   font-weight: normal;
   font-style: italic;
-  font-size: 1.7em;
+  font-size: 1.7rem;
+  z-index: 1;
 }
 
 .all-buttons {
