@@ -16,6 +16,10 @@ const divide = function (arr) {
   return arr[0] / arr[1];
 };
 
+const modulo = function (arr) {
+  return arr[0] % arr[1];
+};
+
 // CREATE BUTTONS FOR DIGITS
 const digitButtons = document.querySelector(".digit-buttons");
 
@@ -105,12 +109,16 @@ const operate = function () {
     case "*":
       answer = roundNumber(multiply(numbers));
       break;
+
     case "/":
       if (numbers[1] === 0) {
         displayValue.textContent = "Nope";
         return setTimeout(clearAll, 2000);
       }
       answer = roundNumber(divide(numbers));
+      break;
+    case "%":
+      answer = roundNumber(modulo(numbers));
       break;
   }
 
@@ -161,3 +169,19 @@ const addDot = function () {
 const dotBtn = document.querySelector(".dot-button");
 
 dotBtn.addEventListener("click", addDot);
+
+//SQRT BUTTON
+
+const sqrtBtn = document.querySelector(".sqrt");
+
+const squareRoot = function () {
+  currentNum = roundNumber(Math.sqrt(currentNum)).toString();
+  displayValue.textContent = currentNum;
+};
+
+sqrtBtn.addEventListener("click", squareRoot);
+
+//MODULO BUTTON
+const moduloBtn = document.querySelector(".modulus");
+
+moduloBtn.addEventListener("click", setOperator);
