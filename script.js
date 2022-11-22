@@ -185,3 +185,14 @@ sqrtBtn.addEventListener("click", squareRoot);
 const moduloBtn = document.querySelector(".modulus");
 
 moduloBtn.addEventListener("click", setOperator);
+
+// AUDIO BUTTON CLICK
+
+const allButtons = document.querySelectorAll("button");
+
+const soundClick = function () {
+  const audio = new Audio("audio/click-21156.mp3");
+  audio.play();
+};
+
+allButtons.forEach((button) => button.addEventListener("click", soundClick));
