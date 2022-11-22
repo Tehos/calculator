@@ -65,11 +65,6 @@ function regDigit(e) {
     currentNum += e.target.textContent;
     displayValue.textContent = currentNum;
   }
-  console.log(currentNum, displayValue.textContent, answer, numbers);
-  console.log(
-    document.getElementById("display-value").offsetWidth,
-    currentNumFull
-  );
 }
 digitBtns.forEach((digitBtn) => digitBtn.addEventListener("click", regDigit));
 
@@ -82,7 +77,6 @@ const setOperator = function (e) {
   numbers.push(Number(currentNum)); // register first number
   operatorSymbol = e.target.textContent; // register operator
   operatorPressed = true;
-  console.log(numbers, operatorSymbol);
 };
 
 const roundNumber = function (num) {
@@ -144,7 +138,6 @@ const clearAll = function () {
   answer = 0;
   currentNumFull = false;
   hasDot = false;
-  console.log(currentNum, displayValue.textContent, answer, numbers);
 };
 
 const clearBtn = document.querySelector(".clear-button");
