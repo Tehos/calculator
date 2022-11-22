@@ -135,9 +135,29 @@ const clearAll = function () {
   numbers = [];
   answer = 0;
   currentNumFull = false;
+  hasDot = false;
   console.log(currentNum, displayValue.textContent, answer, numbers);
 };
 
 const clearBtn = document.querySelector(".clear-button");
 
 clearBtn.addEventListener("click", clearAll);
+
+//DOT BUTTON
+let hasDot = false;
+
+const checkDot = function () {
+  if (Array.from(currentNum).some((digit) => digit === ".")) {
+    return (hasDot = true);
+  }
+};
+
+const addDot = function () {
+  if (checkDot()) return;
+  currentNum += ".";
+  displayValue.textContent = currentNum;
+};
+
+const dotBtn = document.querySelector(".dot-button");
+
+dotBtn.addEventListener("click", addDot);
