@@ -24,42 +24,48 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 60%;
-  width: 80%;
-  padding: 10% 0 15% 0;
+  flex-shrink: 0;
+  height: 480px;
+  width: 280px;
+  padding: 24px 0 48px 0;
   border-radius: 7px;
   box-shadow: -5px 5px rgb(109, 106, 89);
   transform: rotate(-2deg);
 }
 
-.display {
+#display {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: rgb(173, 205, 171);
   color: rgb(50, 59, 49);
-  font-family: "Segment7Standard";
-  font-weight: normal;
-  font-style: italic;
-  font-size: 2.2em;
   border-radius: 10px;
-  width: 75%;
-  height: 10%;
+  width: 180px;
+  height: 40px;
   box-shadow: inset 1px 4px 6px 0.2px rgb(102, 119, 100);
   padding-right: 10px;
   padding-top: 5px;
 }
 
+#display-value {
+  color: rgb(50, 59, 49);
+  font-family: "Segment7Standard";
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.7em;
+}
+
 .all-buttons {
   display: flex;
   justify-content: space-between;
-  width: 90%;
-  height: 55%;
+  width: 220px;
+  height: 280px;
+  flex-grow: 0;
 }
 
 button {
   font-size: 1em;
-  padding: 0.5em 1em;
+  padding: 6px 8px;
   background: linear-gradient(to left, rgb(94, 88, 78), rgb(41, 39, 28) 40%);
   color: rgb(237, 221, 166);
   border-radius: 5px;

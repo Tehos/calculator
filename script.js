@@ -27,7 +27,7 @@ for (i = 9; i >= 0; i--) {
 }
 
 // DISPLAY VALUE
-const displayValue = document.querySelector(".display");
+const displayValue = document.querySelector("#display-value");
 const digitBtns = document.querySelectorAll(".digit-btn");
 displayValue.textContent = "";
 let currentNum = "";
@@ -46,8 +46,10 @@ function regDigit(e) {
     currentNum = "";
     operatorPressed = false;
   }
-  if (currentNum.length > 10) {
+  if (document.getElementById("display-value").offsetWidth > 150) {
     currentNumFull = true;
+    displayValue.textContent = "Too long";
+    return setTimeout(clearAll, 2000);
   }
   if (currentNum === "0" && e.target.textContent !== "0") {
     currentNum = "";
@@ -60,6 +62,10 @@ function regDigit(e) {
     displayValue.textContent = currentNum;
   }
   console.log(currentNum, displayValue.textContent, answer, numbers);
+  console.log(
+    document.getElementById("display-value").offsetWidth,
+    currentNumFull
+  );
 }
 digitBtns.forEach((digitBtn) => digitBtn.addEventListener("click", regDigit));
 
@@ -107,8 +113,14 @@ const operate = function () {
       answer = roundNumber(divide(numbers));
       break;
   }
+
   currentNum = answer.toString();
   displayValue.textContent = currentNum;
+  if (document.getElementById("display-value").offsetWidth > 150) {
+    currentNumFull = true;
+    displayValue.textContent = "Too long";
+    return setTimeout(clearAll, 2000);
+  }
   answer = 0;
   numbers = [];
 };
@@ -122,6 +134,7 @@ const clearAll = function () {
   displayValue.textContent = "0";
   numbers = [];
   answer = 0;
+  currentNumFull = false;
   console.log(currentNum, displayValue.textContent, answer, numbers);
 };
 
