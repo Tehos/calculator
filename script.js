@@ -130,7 +130,7 @@ equalsBtn.addEventListener("click", operate);
 // CLEAR BUTTON
 
 const clearAll = function () {
-  currentNum = "";
+  currentNum = "0";
   displayValue.textContent = "0";
   numbers = [];
   answer = 0;
